@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>MyMaterial</span>
+
+    <span class="example-spacer"></span>
+    
+    <button mat-button>About</button>
+    <button mat-button>Services</button>
+    <button mat-button>Contact</button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-card>
+  <mat-form-field>
+    <input matInput [(ngModel)] = "answer" placeholder="What is one of your bucketlist item?">  
+  </mat-form-field>
+
+  <br>
+
+  <button mat-raised-button (click)="showAnswer()">Answer me</button>
+  <mat-spinner [style.display] = "showSpinner ? 'block' : 'none'"></mat-spinner>
+</mat-card>
+
+<mat-card *ngIf="answerDisplay">
+  <h1>{{ answerDisplay }}, I see...well Best of Luck To You.</h1>
+</mat-card>
+
+
